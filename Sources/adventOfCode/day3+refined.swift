@@ -26,7 +26,7 @@ extension Array where Element == Int {
 
       // Find the best digit within the safe window
       guard let maxDigit = remainingPool.prefix(searchBoundary).max(),
-            let selectedIndex = remainingPool.firstIndex(of: maxDigit)
+        let selectedIndex = remainingPool.firstIndex(of: maxDigit)
       else { break }
 
       // Lock in this digit and advance past it
@@ -42,10 +42,11 @@ extension Array where Element == Int {
 
 func day3Refined() {
   guard let inputURL = Bundle.module.url(forResource: "day3", withExtension: "txt"),
-        let input = try? String(contentsOf: inputURL, encoding: .utf8)
+    let input = try? String(contentsOf: inputURL, encoding: .utf8)
   else { return }
 
-  let batteryBanks = input
+  let batteryBanks =
+    input
     .split(separator: "\n")
     .map { line in line.compactMap(\.wholeNumberValue) }
 
